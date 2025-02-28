@@ -1,0 +1,39 @@
+@use "sass:map";
+
+@import '../../assets/styles/foundation';
+
+$icons: (
+    "approve",
+    "next"
+);
+
+$icon-sizes: (
+    "extra-small": 8px,
+    "small": 12px,
+    "medium": 16px,
+    "large": 24px,
+    "extra-large": 32px,
+);
+
+@each $icon in $icons {
+    .#{$icon} {
+        display: inline-block;
+        mask-image: unquote("url('../../assets/icons/#{$icon}.svg')");
+        mask-position: center;
+        mask-repeat: no-repeat;
+        mask-size: contain;
+    }
+}
+
+@each $icon-size-name, $icon-size-value in $icon-sizes {
+    .#{$icon-size-name} {
+        width: $icon-size-value;
+        height: $icon-size-value;
+    }
+}
+
+@each $variant-key, $variant-properties in $preset-colors {
+    .#{$variant-key} {
+        background-color: map.get($variant-properties, "text-color");
+    }
+}
