@@ -19,6 +19,7 @@
         flex-direction: row;
         align-items: center;
         column-gap: 8px;
+        justify-content: space-between;
         
         &:hover {
             border: map.get($variant-properties, "hover-border");
@@ -40,4 +41,8 @@
         }
 
     }
+}
+
+.center {
+    justify-content: center !important;
 }

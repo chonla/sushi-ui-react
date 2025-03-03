@@ -38,5 +38,5 @@ export function SushiButton(props: SushiButtonProps) {
             </button>
         )
     }
-    return (<button className={`${styles[uiVariant]}`} {...restProps}>{ label || '' }</button>);
+    return (<button className={`${styles.center} ${styles[uiVariant]}`} {...restProps}>{ label || '' }</button>);
 }
